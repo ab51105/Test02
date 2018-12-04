@@ -4,8 +4,8 @@
 
 ## Overview
 The project is related to 
-> * Examine the task of scene recognition with tiny images and nearest neighbor classification 
-  * Bags of quantized local features and linear classifiers learned by support vector machines
+* Examine the task of scene recognition with tiny images and nearest neighbor classification 
+* Bags of quantized local features and linear classifiers learned by support vector machines
   
 ## Implementation
 In this homework, in order to do image recognition, we will need to implement `Image representation` first, and then we can use it to get features from test data and train data. With the information above, we further implement `Classifier` to classify different scenes. After these two part are finished, we can recognize the category of images. 
