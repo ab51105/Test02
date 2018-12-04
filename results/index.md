@@ -141,39 +141,40 @@ We adopt the `LinearSVC` function and try to tune the cost term `"C"` to get the
         <td> 0.723</td>
 	</tr>
 </table>
-### D.Design decisions and evaluation of SVM (different "C")
+
+### D. Design decisions and evaluation of SVC with different "C"
 <table>
 	<tr> 
 		<td></td>
 		<td> accuracy</td>
     </tr>
 	<tr>
-		<td> C = 0.001</td>
-		<td> 0.411</td>
-	</tr>
-    <tr>
-		<td> C = 0.01</td>
-		<td> 0.418</td>
-	</tr>
-    <tr>
 		<td> C = 0.1</td>
-		<td> 0.436</td>
+		<td> 0.451</td>
 	</tr>
     <tr>
 		<td> C = 1</td>
-		<td> 0.534</td>
+		<td> 0.514</td>
 	</tr>
     <tr>
 		<td> C = 10</td>
-		<td> 0.644</td>
+		<td> 0.64</td>
 	</tr>
     <tr>
 		<td> C = 100</td>
-		<td> 0.701</td>
+		<td> 0.718</td>
 	</tr>
     <tr>
-		<td> C = 1000</td>
-		<td> 0.636</td>
+		<td> C = 200</td>
+		<td> 0.72</td>
+	</tr>
+    <tr>
+		<td> C = 300</td>
+		<td> 0.716</td>
+	</tr>
+    <tr>
+		<td> C = 500</td>
+		<td> 0.709</td>
 	</tr>
 
 </table>
