@@ -141,7 +141,44 @@ We adopt the `LinearSVC` function and try to tune the cost term `"C"` to get the
         <td> 0.723</td>
 	</tr>
 </table>
+### D.Design decisions and evaluation of SVM (different "C")
+<table>
+	<tr> 
+		<td></td>
+		<td> accuracy</td>
+    </tr>
+	<tr>
+		<td> C = 0.001</td>
+		<td> 0.411</td>
+	</tr>
+    <tr>
+		<td> C = 0.01</td>
+		<td> 0.418</td>
+	</tr>
+    <tr>
+		<td> C = 0.1</td>
+		<td> 0.436</td>
+	</tr>
+    <tr>
+		<td> C = 1</td>
+		<td> 0.534</td>
+	</tr>
+    <tr>
+		<td> C = 10</td>
+		<td> 0.644</td>
+	</tr>
+    <tr>
+		<td> C = 100</td>
+		<td> 0.701</td>
+	</tr>
+    <tr>
+		<td> C = 1000</td>
+		<td> 0.636</td>
+	</tr>
 
+</table>
+
+In this part, I fine-tune the parameter "C" to get a better accuracy. Finally, I choose "C=100". Because for  large values of C, the optimization will choose a smaller-margin hyperplane if that hyperplane does a better job of getting all the training points classified correctly. 
 We can observe that the accuracy grows with the vocab_size. Therefore, we will adopt vocab_800 as our model.
 ## Results
 ### Accuracy 
