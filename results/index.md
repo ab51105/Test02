@@ -169,16 +169,16 @@ We can observe that the accuracy of bag-of-SIFT is better than tiny image. And t
 ### Confusion matrix (with vocab_size = 800)
 * tiny_image + nearest_neighbor (accuracy = 0.227)
 
-    ![](confusion_matrix/tiny_NN.PNG)
+    ![](confusion_matrix/tiny_NN.png)
 * tiny_image + support_vector_machine (accuracy = 0.132)
 
-    ![](confusion_matrix/tiny_SVM.PNG)
+    ![](confusion_matrix/tiny_SVM.png)
 * bag_of_sift + nearest_neighbor (accuracy = 0.486)
 
-    ![](confusion_matrix/bag_NN.PNG)
+    ![](confusion_matrix/bag_NN.png)
 * bag_of_sift + support_vector_machine (accuracy = 0.723)
 
-    ![](confusion_matrix/bag_SVM.PNG)
+    ![](confusion_matrix/bag_SVM.png)
 
 
 
