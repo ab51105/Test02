@@ -85,7 +85,7 @@ def get_tiny_images(image_paths):
         return image_feats
     ```
 
-### 2. Classifier
+### B. Classifier
 We implement classifier in order to use the train_image_feats, training label, and test_image_feats to classify test images into several categories. We implement two different methods, including nearest-neighbor and linear support_vector_machine.
 
 * nearest_neighbor
@@ -113,14 +113,14 @@ We implement classifier in order to use the train_image_feats, training label, a
 We adopt the `LinearSVC` function and try to tune the cost term `"C"` to get the highest accuracy.
     ```
     def svm_classify(train_image_feats, train_labels, test_image_feats):
-        classifier = LinearSVC(C= 0.0001)
+        classifier = LinearSVC(C= 200)
         classifier.fit(train_image_feats, train_labels)
         pred_label = classifier.predict(test_image_feats)
         
         return pred_label
     ```
 
-### 3. [Extra credit] Experiment with many different vocabulary sizes and report performance
+### C. Experiment with different vocabulary sizes 
 <table>
 	<tr> 
 		<td>vocab_size</td>
@@ -130,41 +130,40 @@ We adopt the `LinearSVC` function and try to tune the cost term `"C"` to get the
     </tr>
 	<tr>
 		<td> NN</td>
-		<td> 0.511</td>
-		<td> 0.519</td>
+		<td> 0.433</td>
+		<td> 0.461</td>
         <td> 0.486</td>
 	</tr>
 	<tr>
-		<td> SVM(C=100)</td>
-		<td> 0.686</td>
-        <td> 0.701</td>
-        <td> 0.718</td>
+		<td> SVM(C=200)</td>
+		<td> 0.685</td>
+        <td> 0.698</td>
+        <td> 0.723</td>
 	</tr>
 </table>
 
-From the result above, except the condition of vocab=800/NN, the accuracy grows with the vocab_size becomes larger. And it is the same as our expected.
-
+We can observe that the accuracy grows with the vocab_size. Therefore, we will adopt vocab_800 as our model.
 ## Results
 ### Accuracy 
 <table>
 	<tr> 
 		<td></td>
 		<td> NN</td>
-        <td> SVM(C=100)</td>
+        <td> SVM(C=200)</td>
     </tr>
 	<tr>
 		<td> tiny image</td>
-		<td> 0.224</td>
-		<td> 0.208</td>
+		<td> 0.227</td>
+		<td> 0.132</td>
 	</tr>
 	<tr>
-		<td> bag of SIFT(vocab=400)</td>
-		<td> 0.519</td>
-        <td> 0.701</td>
+		<td> bag of SIFT(vocab=800)</td>
+		<td> 0.486</td>
+        <td> 0.723</td>
 	</tr>
 </table>
 
-From the result above, we can find that the accuracy of bag-of-SIFT is better than tiny image. And with appropriate parameter of SVM method, we can get a more accurate result than near-neighbor method.
+We can observe that the accuracy of bag-of-SIFT is better than tiny image. And the bag-of-SIFT with SVM is better than that with nearest neighbor
 
 ### LinearSVC with different cost "C"
 #### method
