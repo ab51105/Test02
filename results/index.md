@@ -166,19 +166,19 @@ We can observe that the accuracy grows with the vocab_size. Therefore, we will a
 We can observe that the accuracy of bag-of-SIFT is better than tiny image. And the bag-of-SIFT with SVM is better than that with nearest neighbor.
 
 
-### Confusion matrix (with vocab_size = 400)
-* tiny_image + nearest_neighbor (accuracy = 0.224)
+### Confusion matrix (with vocab_size = 800)
+* tiny_image + nearest_neighbor (accuracy = 0.227)
 
-    ![](confusion_matrix/tiny_NN.png)
-* tiny_image + support_vector_machine (accuracy = 0.208)
+    ![](confusion_matrix1/tiny_NN.PNG)
+* tiny_image + support_vector_machine (accuracy = 0.132)
 
-    ![](confusion_matrix/tiny_SVM.PNG)
-* bag_of_sift + nearest_neighbor (accuracy = 0.519)
+    ![](confusion_matrix1/tiny_SVM.PNG)
+* bag_of_sift + nearest_neighbor (accuracy = 0.486)
 
-    ![](confusion_matrix/bag_NN.PNG)
-* bag_of_sift + support_vector_machine (accuracy = 0.701)
+    ![](confusion_matrix1/bag_NN.PNG)
+* bag_of_sift + support_vector_machine (accuracy = 0.723)
 
-    ![](confusion_matrix/bag_SVM.PNG)
+    ![](confusion_matrix1/bag_SVM.PNG)
 
 
 
