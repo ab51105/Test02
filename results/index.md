@@ -183,7 +183,7 @@ We can observe that the accuracy of bag-of-SIFT is better than tiny image. And t
 
 
 ### Visualization
-#### method: bags-of-SIFT (vocab_size=400) + linearSVC(C=100)
+#### bags-of-SIFT (vocab_size=800) + linearSVC(C=200)
 | Category name | Sample training images | Sample true positives | False positives with true label | False negatives with wrong predicted label |
 | :-----------: | :--------------------: | :-------------------: | :-----------------------------: | :----------------------------------------: |
 | Kitchen | ![](thumbnails/Kitchen_train_image_0001.jpg) | ![](thumbnails/Kitchen_TP_image_0192.jpg) | ![](thumbnails/Kitchen_FP_image_0107.jpg) | ![](thumbnails/Kitchen_FN_image_0190.jpg) |
