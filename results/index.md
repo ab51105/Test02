@@ -58,7 +58,7 @@ def get_tiny_images(image_paths):
     ```
 * get bags of feature
 
-    At first, I get vocabulary information by loading `vocab.pkl`. And then we extract the features from input images and classify them into each cluster by calculate the difference between each input feature and cluster's feature. At the same time, we build a histogram indicating how many times each cluster was used and then normalized it. At this point, we can get the image_feats for one image. And after the loop operation, we can get the whole features of input image set.
+    By loading `vocab.pkl`, we can get vocabulary information. We extract the features from input images and classify them into each cluster by calculate the difference between each input feature and cluster's feature. Simultaneously, we build a histogram indicating how many times each cluster was used and then normalized it. At this point, we can get the image_feats for one image. And after the loop operation, we can get the whole features of input image set.
 
     ```
     def get_bags_of_sifts(image_paths):
@@ -86,11 +86,11 @@ def get_tiny_images(image_paths):
     ```
 
 ### 2. Classifier
-In this part, we will implement classifier in order to use the train_image_feats, training label, and test_image_feats to classify test images into several categories. And I implement these two methods below.
+We implement classifier in order to use the train_image_feats, training label, and test_image_feats to classify test images into several categories. We implement two different methods, including nearest-neighbor and linear support_vector_machine.
 
 * nearest_neighbor
 
-    nearest_neighbor simply find the smallest distances between train_image_feats and test_image_feats for each feature. And when we find the smallest distance, we find its correspondent training label. Finally, the recognized category of scene is based on this training label. 
+    The nearest neighbor classifier has many desirable features -- it requires no training, it can learn arbitrarily complex decision boundaries, and it trivially supports multiclass problems. The nearest_neighbor simply find the smallest distances between train_image_feats and test_image_feats for each feature. And when we find the smallest distance, we find its  correspondent training label. Thus, the recognized category of scene is based on this training label. 
     ```
     def nearest_neighbor_classify(train_image_feats, train_labels, test_image_feats):
         # initialization
@@ -109,7 +109,8 @@ In this part, we will implement classifier in order to use the train_image_feats
 
 * linear support_vector_machine
 
-    In the code below, I use the `LinearSVC` function and tune the cost term `"C"` to get the highest accuracy.
+     Linear classifiers are one of the simplest possible learning models. The feature space is partitioned by a learned hyperplane and test cases are categorized based on which side of that hyperplane they fall on. Despite this model being far less expressive than the nearest neighbor classifier, it will often perform better.
+We adopt the `LinearSVC` function and try to tune the cost term `"C"` to get the highest accuracy.
     ```
     def svm_classify(train_image_feats, train_labels, test_image_feats):
         classifier = LinearSVC(C= 0.0001)
