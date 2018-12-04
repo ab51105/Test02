@@ -4,16 +4,16 @@
 
 ## Overview
 The project is related to 
-* Examine the task of scene recognition with tiny images and nearest neighbor classification 
-* Bags of quantized local features and linear classifiers learned by support vector machines
+* Two different classification techniques: tiny images and bags of SIFT features
+* Two different image representations: nearest neighbor and linear SVM
   
-## Implementation
-In this homework, in order to do image recognition, we will need to implement `Image representation` first, and then we can use it to get features from test data and train data. With the information above, we further implement `Classifier` to classify different scenes. After these two part are finished, we can recognize the category of images. 
-### 1. Image representations
-In this part, we will implement two different image representation methods. The easy one is `tiny image`, and the other is more accurate one - `bags of SIFT`.
+## Procedure
+In order to do scene recognition, we need to implement `Image representation`, and then we can use it to get features from training and testing data. We further implement `Classifier` to classify different scenes. Then we can recognize the category of images. 
+### A. Image representations
+We implement two different image representation methods. The first one is `tiny image`, and the other is a more powerful one - `bags of SIFT`.
 
 #### tiny images
-I resize input images to 16 * 16 numpy array, reshape it to size 1 * 256 numpy array, and normalize it. After the procedure above, we can get the features of input images. Obviously, just resizing the image to smaller one as our features is a rough method. Because we don't get its representative features. So the accuracy wouldn't be too high as we predict.
+We know that input image is 16 * 16 numpy array and we need to reshape it to size 1 * 256 numpy array then normalize it. However, only resizing the image to smaller one as our features is a bad method. Because we don't extract its representative features well. Thus, we cannot get high prediction accuracy by this method.
 ```
 def get_tiny_images(image_paths):
 
@@ -37,7 +37,7 @@ def get_tiny_images(image_paths):
 #### Bag of SIFTs
 * build vocabulary
 
-    In order to get bags of quantized SIFT features, we will build vocabulary first. By sampling many local features from training sets and clustering them with k-means. We can build vocabulary accurately. In this code, we can change the `vocab_size` in "proj3.py" to change the total numbers of clusters and change the execution time and accuracy of building vocabulary. After finishing this part, we will save the vocabulary in `vocab.pkl`. 
+    We build vocabulary first because we need to get bags of quantized SIFT features. Wes sample local features from training data and cluster them with k-means. Furthermore, we can change the `vocab_size` in "proj3.py" to change the total numbers of clusters and impact accuracy of building vocabulary. Then, we can save the vocabulary in `vocab.pkl`. 
     
     ```
     def build_vocabulary(image_paths, vocab_size):
