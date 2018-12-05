@@ -34,7 +34,7 @@ def get_tiny_images(image_paths):
     return tiny_images
 ```
 
-#### Bag of SIFTs
+#### bag of SIFTs
 * vocabulary
 
     We build vocabulary first because we need to get bags of quantized SIFT features. Wes sample local features from training data and cluster them with k-means. Furthermore, we can change the `vocab_size` in "proj3.py" to change the total numbers of clusters and impact accuracy of building vocabulary. Then, we can save the vocabulary in `vocab.pkl`. 
@@ -143,7 +143,7 @@ We adopt the `LinearSVC` function and try to tune the cost term `"C"` to get the
 </table>
 We can observe that the accuracy grows with the vocab_size. Therefore, we adopt vocab_size = 800 as our model.
 
-### D. Design decisions and evaluation of SVC with different "C"
+### D. Design decisions and evaluation of SVM with different "C"
 <table>
 	<tr> 
 		<td></td>
@@ -183,7 +183,7 @@ We can observe that the accuracy grows with the vocab_size. Therefore, we adopt 
 We try to fine-tune the parameter "C" of the SVM. We finally choose C=200 because of its highest accuracy.
 
 ## Results
-### Accuracy 
+### Accuracy of different combinations
 <table>
 	<tr> 
 		<td></td>
@@ -205,24 +205,24 @@ We try to fine-tune the parameter "C" of the SVM. We finally choose C=200 becaus
 We can observe that the accuracy of bag-of-SIFT is better than tiny image. And the bag-of-SIFT with SVM is better than that with nearest neighbor.
 
 
-### Confusion matrix (with vocab_size = 800)
-* tiny_image / nearest neighbor (accuracy = 0.227)
+### Confusion matrix (with vocab_size = 800, C = 200)
+* tiny image / nearest neighbor (accuracy = 0.227)
 
     ![](confusion_matrix/tiny_NN.png)
-* tiny_image / SVM (accuracy = 0.132)
+* tiny image / SVM (accuracy = 0.132)
 
     ![](confusion_matrix/tiny_SVM.png)
-* bag_of_sift / nearest neighbor (accuracy = 0.486)
+* bag of sift / nearest neighbor (accuracy = 0.486)
 
     ![](confusion_matrix/bag_NN.png)
-* bag_of_sift / SVM (accuracy = 0.723)
+* bag of sift / SVM (accuracy = 0.723)
 
     ![](confusion_matrix/bag_SVM.png)
 
 
 
 ### Visualization
-#### bags-of-SIFT (vocab_size=800) + linearSVC(C=200)
+#### bags-of-SIFT (vocab_size=800) + linear SVM (C=200)
 | Category name | Sample training images | Sample true positives | False positives with true label | False negatives with wrong predicted label |
 | :-----------: | :--------------------: | :-------------------: | :-----------------------------: | :----------------------------------------: |
 | Kitchen | ![](thumbnails/Kitchen_train_image_0001.jpg) | ![](thumbnails/Kitchen_TP_image_0192.jpg) | ![](thumbnails/Kitchen_FP_image_0107.jpg) | ![](thumbnails/Kitchen_FN_image_0190.jpg) |
