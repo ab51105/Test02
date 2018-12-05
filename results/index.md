@@ -225,19 +225,19 @@ We can observe that the accuracy of bag-of-SIFT is better than tiny image. And t
 #### bags-of-SIFT (vocab_size=800) + linear SVM (C=200)
 | Category name | Sample training images | Sample true positives | False positives with true label | False negatives with wrong predicted label |
 | :-----------: | :--------------------: | :-------------------: | :-----------------------------: | :----------------------------------------: |
-| Kitchen | ![](thumbnails/Kitchen_train_image_0001.jpg) | ![](thumbnails/Kitchen_TP_image_0192.jpg) | ![](thumbnails/Kitchen_FP_image_0107.jpg) | ![](thumbnails/Kitchen_FN_image_0190.jpg) |
-| Store | ![](thumbnails/Store_train_image_0001.jpg) | ![](thumbnails/Store_TP_image_0151.jpg) | ![](thumbnails/Store_FP_image_0145.jpg) | ![](thumbnails/Store_FN_image_0143.jpg) |
-| Bedroom | ![](thumbnails/Bedroom_train_image_0001.jpg) | ![](thumbnails/Bedroom_TP_image_0180.jpg) | ![](thumbnails/Bedroom_FP_image_0121.jpg) | ![](thumbnails/Bedroom_FN_image_0176.jpg) |
-| LivingRoom | ![](thumbnails/LivingRoom_train_image_0001.jpg) | ![](thumbnails/LivingRoom_TP_image_0147.jpg) | ![](thumbnails/LivingRoom_FP_image_0007.jpg) | ![](thumbnails/LivingRoom_FN_image_0146.jpg) |
-| Office | ![](thumbnails/Office_train_image_0002.jpg) | ![](thumbnails/Office_TP_image_0185.jpg) | ![](thumbnails/Office_FP_image_0005.jpg) | ![](thumbnails/Office_FN_image_0140.jpg) |
-| Industrial | ![](thumbnails/Industrial_train_image_0002.jpg) | ![](thumbnails/Industrial_TP_image_0152.jpg) | ![](thumbnails/Industrial_FP_image_0001.jpg) | ![](thumbnails/Industrial_FN_image_0146.jpg) |
-| Suburb | ![](thumbnails/Suburb_train_image_0002.jpg) | ![](thumbnails/Suburb_TP_image_0176.jpg) | ![](thumbnails/Suburb_FP_image_0081.jpg) | ![](thumbnails/Suburb_FN_image_0013.jpg) |
-| InsideCity | ![](thumbnails/InsideCity_train_image_0005.jpg) | ![](thumbnails/InsideCity_TP_image_0140.jpg) | ![](thumbnails/InsideCity_FP_image_0035.jpg) | ![](thumbnails/InsideCity_FN_image_0139.jpg) |
-| TallBuilding | ![](thumbnails/TallBuilding_train_image_0010.jpg) | ![](thumbnails/TallBuilding_TP_image_0129.jpg) | ![](thumbnails/TallBuilding_FP_image_0059.jpg) | ![](thumbnails/TallBuilding_FN_image_0131.jpg) |
-| Street | ![](thumbnails/Street_train_image_0001.jpg) | ![](thumbnails/Street_TP_image_0149.jpg) | ![](thumbnails/Street_FP_image_0128.jpg) | ![](thumbnails/Street_FN_image_0146.jpg) |
-| Highway | ![](thumbnails/Highway_train_image_0009.jpg) | ![](thumbnails/Highway_TP_image_0162.jpg) | ![](thumbnails/Highway_FP_image_0004.jpg) | ![](thumbnails/Highway_FN_image_0144.jpg) |
-| OpenCountry | ![](thumbnails/OpenCountry_train_image_0003.jpg) | ![](thumbnails/OpenCountry_TP_image_0125.jpg) | ![](thumbnails/OpenCountry_FP_image_0103.jpg) | ![](thumbnails/OpenCountry_FN_image_0123.jpg) |
-| Coast | ![](thumbnails/Coast_train_image_0006.jpg) | ![](thumbnails/Coast_TP_image_0130.jpg) | ![](thumbnails/Coast_FP_image_0030.jpg) | ![](thumbnails/Coast_FN_image_0122.jpg) |
-| Mountain | ![](thumbnails/Mountain_train_image_0002.jpg) | ![](thumbnails/Mountain_TP_image_0123.jpg) | ![](thumbnails/Mountain_FP_image_0124.jpg) | ![](thumbnails/Mountain_FN_image_0103.jpg) |
-| Forest | ![](thumbnails/Forest_train_image_0003.jpg) | ![](thumbnails/Forest_TP_image_0142.jpg) | ![](thumbnails/Forest_FP_image_0101.jpg) | ![](thumbnails/Forest_FN_image_0128.jpg) |
+| Kitchen | ![](thumbnails_1/Kitchen_train_image_0146.jpg) | ![](thumbnails_1/Kitchen_TP_image_0203.jpg) | ![](thumbnails_1/Kitchen_FP_image_0353.jpg) | ![](thumbnails_1/Kitchen_FN_image_0149.jpg) |
+| Store | ![](thumbnails_1/Store_train_image_0191.jpg) | ![](thumbnails_1/Store_TP_image_0254.jpg) | ![](thumbnails_1/Store_FP_image_0030.jpg) | ![](thumbnails_1/Store_FN_image_0081.jpg) |
+| Bedroom | ![](thumbnails_1/Bedroom_train_image_0146.jpg) | ![](thumbnails_1/Bedroom_TP_image_0175.jpg) | ![](thumbnails_1/Bedroom_FP_image_0045.jpg) | ![](thumbnails_1/Bedroom_FN_image_0207.jpg) |
+| LivingRoom | ![](thumbnails_1/LivingRoom_train_image_0185.jpg) | ![](thumbnails_1/LivingRoom_TP_image_0096.jpg) | ![](thumbnails_1/LivingRoom_FP_image_0230.jpg) | ![](thumbnails_1/LivingRoom_FN_image_0082.jpg) |
+| Office | ![](thumbnails_1/Office_train_image_0152.jpg) | ![](thumbnails_1/Office_TP_image_0011.jpg) | ![](thumbnails_1/Office_FP_image_0344.jpg) | ![](thumbnails_1/Office_FN_image_0117.jpg) |
+| Industrial | ![](thumbnails_1/Industrial_train_image_0191.jpg) | ![](thumbnails_1/Industrial_TP_image_0256.jpg) | ![](thumbnails_1/Industrial_FP_image_0146.jpg) | ![](thumbnails_1/Industrial_FN_image_0297.jpg) |
+| Suburb | ![](thumbnails_1/Suburb_train_image_0191.jpg) | ![](thumbnails_1/Suburb_TP_image_0128.jpg) | ![](thumbnails_1/Suburb_FP_image_0142.jpg) | ![](thumbnails_1/Suburb_FN_image_0153.jpg) |
+| InsideCity | ![](thumbnails_1/InsideCity_train_image_0152.jpg) | ![](thumbnails_1/InsideCity_TP_image_0134.jpg) | ![](thumbnails_1/InsideCity_FP_image_0144.jpg) | ![](thumbnails_1/InsideCity_FN_image_0040.jpg) |
+| TallBuilding | ![](thumbnails_1/TallBuilding_train_image_0152.jpg) | ![](thumbnails_1/TallBuilding_TP_image_0047.jpg) | ![](thumbnails_1/TallBuilding_FP_image_0196.jpg) | ![](thumbnails_1/TallBuilding_FN_image_0292.jpg) |
+| Street | ![](thumbnails_1/Street_train_image_0152.jpg) | ![](thumbnails_1/Street_TP_image_0057.jpg) | ![](thumbnails_1/Street_FP_image_0133.jpg) | ![](thumbnails_1/Street_FN_image_0080.jpg) |
+| Highway | ![](thumbnails_1/Highway_train_image_0152.jpg) | ![](thumbnails_1/Highway_TP_image_0104.jpg) | ![](thumbnails_1/Highway_FP_image_0350.jpg) | ![](thumbnails_1/Highway_FN_image_0136.jpg) |
+| OpenCountry | ![](thumbnails_1/OpenCountry_train_image_0146.jpg) | ![](thumbnails_1/OpenCountry_TP_image_0044.jpg) | ![](thumbnails_1/OpenCountry_FP_image_0293.jpg) | ![](thumbnails_1/OpenCountry_FN_image_0093.jpg) |
+| Coast | ![](thumbnails_1/Coast_train_image_0146.jpg) | ![](thumbnails_1/Coast_TP_image_0047.jpg) | ![](thumbnails_1/Coast_FP_image_0030.jpg) | ![](thumbnails_1/Coast_FN_image_0293.jpg) |
+| Mountain | ![](thumbnails_1/Mountain_train_image_0185.jpg) | ![](thumbnails_1/Mountain_TP_image_0279.jpg) | ![](thumbnails_1/Mountain_FP_image_0325.jpg) | ![](thumbnails_1/Mountain_FN_image_0293.jpg) |
+| Forest | ![](thumbnails_1/Forest_train_image_0152.jpg) | ![](thumbnails_1/Forest_TP_image_0081.jpg) | ![](thumbnails_1/Forest_FP_image_0326.jpg) | ![](thumbnails_1/Forest_FN_image_0133.jpg) |
 
