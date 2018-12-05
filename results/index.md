@@ -35,7 +35,7 @@ def get_tiny_images(image_paths):
 ```
 
 #### Bag of SIFTs
-* build vocabulary
+* vocabulary
 
     We build vocabulary first because we need to get bags of quantized SIFT features. Wes sample local features from training data and cluster them with k-means. Furthermore, we can change the `vocab_size` in "proj3.py" to change the total numbers of clusters and impact accuracy of building vocabulary. Then, we can save the vocabulary in `vocab.pkl`. 
     
@@ -56,7 +56,7 @@ def get_tiny_images(image_paths):
 
         return vocab
     ```
-* get bags of feature
+* bags of feature
 
     By loading `vocab.pkl`, we can get vocabulary information. We extract the features from input images and classify them into each cluster by calculate the difference between each input feature and cluster's feature. Simultaneously, we build a histogram indicating how many times each cluster was used and then normalized it. At this point, we can get the image_feats for one image. And after the loop operation, we can get the whole features of input image set.
 
@@ -88,7 +88,7 @@ def get_tiny_images(image_paths):
 ### B. Classifier
 We implement classifier in order to use the train_image_feats, training label, and test_image_feats to classify test images into several categories. We implement two different methods, including nearest-neighbor and linear support_vector_machine.
 
-* nearest_neighbor
+* nearest neighbor
 
     The nearest neighbor classifier has many desirable features -- it requires no training, it can learn arbitrarily complex decision boundaries, and it trivially supports multiclass problems. The nearest_neighbor simply find the smallest distances between train_image_feats and test_image_feats for each feature. And when we find the smallest distance, we find its  correspondent training label. Thus, the recognized category of scene is based on this training label. 
     ```
@@ -107,7 +107,7 @@ We implement classifier in order to use the train_image_feats, training label, a
         return test_predicts
     ```
 
-* linear support_vector_machine
+* linear SVM
 
      Linear classifiers are one of the simplest possible learning models. The feature space is partitioned by a learned hyperplane and test cases are categorized based on which side of that hyperplane they fall on. Despite this model being far less expressive than the nearest neighbor classifier, it will often perform better.
 We adopt the `LinearSVC` function and try to tune the cost term `"C"` to get the highest accuracy.
@@ -141,6 +141,7 @@ We adopt the `LinearSVC` function and try to tune the cost term `"C"` to get the
         <td> 0.723</td>
 	</tr>
 </table>
+We can observe that the accuracy grows with the vocab_size. Therefore, we adopt vocab_size = 800 as our model.
 
 ### D. Design decisions and evaluation of SVC with different "C"
 <table>
@@ -179,8 +180,8 @@ We adopt the `LinearSVC` function and try to tune the cost term `"C"` to get the
 
 </table>
 
-In this part, I fine-tune the parameter "C" to get a better accuracy. Finally, I choose "C=100". Because for  large values of C, the optimization will choose a smaller-margin hyperplane if that hyperplane does a better job of getting all the training points classified correctly. 
-We can observe that the accuracy grows with the vocab_size. Therefore, we will adopt vocab_800 as our model.
+We try to fine-tune the parameter "C" of the SVM. We finally choose C=200 because of its highest accuracy.
+
 ## Results
 ### Accuracy 
 <table>
@@ -205,16 +206,16 @@ We can observe that the accuracy of bag-of-SIFT is better than tiny image. And t
 
 
 ### Confusion matrix (with vocab_size = 800)
-* tiny_image + nearest_neighbor (accuracy = 0.227)
+* tiny_image / nearest neighbor (accuracy = 0.227)
 
     ![](confusion_matrix/tiny_NN.png)
-* tiny_image + support_vector_machine (accuracy = 0.132)
+* tiny_image / SVM (accuracy = 0.132)
 
     ![](confusion_matrix/tiny_SVM.png)
-* bag_of_sift + nearest_neighbor (accuracy = 0.486)
+* bag_of_sift / nearest neighbor (accuracy = 0.486)
 
     ![](confusion_matrix/bag_NN.png)
-* bag_of_sift + support_vector_machine (accuracy = 0.723)
+* bag_of_sift / SVM (accuracy = 0.723)
 
     ![](confusion_matrix/bag_SVM.png)
 
