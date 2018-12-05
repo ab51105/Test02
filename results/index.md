@@ -129,7 +129,7 @@ We adopt the `LinearSVC` function and try to tune the cost term `"C"` to get the
         <td> 800</td>
     </tr>
 	<tr>
-		<td> NN</td>
+		<td> nearest neighbor </td>
 		<td> 0.433</td>
 		<td> 0.461</td>
         <td> 0.486</td>
